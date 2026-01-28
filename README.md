@@ -1,6 +1,6 @@
-# Stellar Showcase
+# João Luis - Portfólio
 
-Um portfólio moderno construído com React, TypeScript, Tailwind CSS e Vite.
+Este repositório reúne meus projetos acadêmicos e pessoais desenvolvidos durante a formação em desenvolvimento web, mostrando minhas práticas e aprendizado em tecnologias modernas.
 
 ## Tecnologias
 
@@ -16,7 +16,7 @@ Um portfólio moderno construído com React, TypeScript, Tailwind CSS e Vite.
 1. Instale as dependências:
    ```bash
    npm install
-   ```
+
 
 2. Inicie o servidor de desenvolvimento:
    ```bash

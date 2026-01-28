@@ -5,6 +5,7 @@ import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Contact from "../sections/Contact";
 import Footer from "../components/Footer";
+import Formation from "../sections/Formation";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <main>
         <Hero />
         <About />
+        <Formation/>
         <Skills />
         <Projects />
         <Contact />

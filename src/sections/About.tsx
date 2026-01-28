@@ -17,8 +17,7 @@ const highlights = [
   {
     icon: Users,
     title: "Trabalho em Equipe",
-    description:
-      "Mentalidade colaborativa, com boa comunicação e experiência em times remotos.",
+    description: "Mentalidade colaborativa, com boa comunicação.",
   },
 ];
 
@@ -60,48 +59,51 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg text-slate-400 font-rounded tracking-wider">
-              Sou um{" "}
+              Sou{" "}
               <span className="font-medium text-slate-100">
                 Desenvolvedor Web
               </span>{" "}
-              com experiência na criação de aplicações modernas, focadas em
-              performance, usabilidade e boas práticas de desenvolvimento. Gosto
-              de escrever código limpo, organizado e fácil de manter, sempre
-              buscando evoluir tecnicamente a cada projeto.
+              buscando oportunidade de estágio para aprender e desenvolver
+              habilidades em aplicações modernas, focadas em performance,
+              usabilidade e boas práticas.
             </p>
 
             <p className="text-lg text-slate-400 font-rounded tracking-wider">
-              Possuo formação pelo programa{"  "}
+              Sou estudante de{" "}
+              <span className="font-medium text-slate-100">
+                Análise e Desenvolvimento de Sistemas
+              </span>{" "}
+              no{" "}
+              <span className="font-medium text-slate-100">
+                Centro Universitário FAMETRO - Unifametro
+              </span>{" "}
+              e possuo formação pelo programa{" "}
               <span className="font-medium text-slate-100">Geração Tech</span>,
               no curso{" "}
               <span className="font-medium text-slate-100">
                 Desenvolvimento Web Full Stack 2.0
               </span>
-              . Durante um curso intensivo de 3 meses, adquiri experiência
-              prática com{" "}
-              <span className="font-medium text-slate-100">
-                HTML, CSS, JavaScript, TypeScript e React.js
-              </span>
-              , desenvolvendo aplicações completas e consolidando conceitos
-              fundamentais do desenvolvimento web.
+              . Durante o curso intensivo de 3 meses, estudei e pratiquei HTML,
+              CSS, JavaScript, TypeScript e React.js , consolidando os conceitos
+              fundamentais do desenvolvimento web e preparando-me para iniciar
+              minha trajetória como estagiário.
             </p>
 
             <p className="text-lg text-slate-400 font-rounded tracking-wider">
-              Além da formação, possuo experiência prática em{" "}
+              Além da formação, desenvolvi projetos acadêmicos e pessoais.
+              Participei da criação de um site para a
               <span className="font-medium text-slate-100">
-                projetos acadêmicos e pessoais
+                {" "}
+                ONG União Felina
               </span>
-              . Participei do desenvolvimento de um site voltado ao apoio de uma{" "}
+              , voltado ao apoio a animais de rua em Fortaleza. Também construí
+              outros projetos focados em
               <span className="font-medium text-slate-100">
-                ONG de proteção a gatos e felinos
+                {" "}
+                aplicações web modernas, layouts e boas práticas de
+                desenvolvimento
               </span>
-              , localizada no bairro Benfica, em Fortaleza. Também desenvolvi
-              outros projetos focados em{" "}
-              <span className="font-medium text-slate-100">
-                aplicações web modernas
-              </span>
-              , layouts e boas práticas de
-              desenvolvimento.
+              , consolidando conhecimentos estudados durante a formação.
             </p>
           </motion.div>
 
@@ -126,7 +128,9 @@ export default function About() {
                   <h3 className="mb-1 text-lg font-rimouski text-slate-100">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-400 font-rounded tracking-wider">{item.description}</p>
+                  <p className="text-sm text-slate-400 font-rounded tracking-wider">
+                    {item.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
