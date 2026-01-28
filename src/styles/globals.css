@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Rounded Elegance";
+    src: url("../assets/fonts/rounded_elegance/Rounded Elegance Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Resolve";
+    src: url("../assets/fonts/resolve_sans/Resolve-Light.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rimouski";
+    src: url("../assets/fonts/rimouski/rimouski sb.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@theme {
+    --font-rounded: "Rounded Elegance", ui-sans-serif, system-ui;
+    --font-resolve: "Resolve", ui-sans-serif, system-ui;
+    --font-rimouski: "Rimouski", ui-sans-serif, system-ui;
+}
+
