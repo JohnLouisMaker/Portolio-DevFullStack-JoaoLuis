@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, Folder } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -7,6 +8,24 @@ const fadeInUp = {
 };
 
 export default function Hero() {
+  const [open, setOpen] = useState(false);
+
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Background Orbs */}
@@ -24,7 +43,7 @@ export default function Hero() {
             viewport={{ once: true }}
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
-            className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-rounded  tracking-tight leading-tight mb-6"
+            className="text-white text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-rounded tracking-tight leading-tight mb-6"
           >
             Oi, eu sou{" "}
             <span className="block sm:inline text-sky-400 font-resolve">
@@ -35,7 +54,6 @@ export default function Hero() {
             </span>
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p
             initial="hidden"
             whileInView="visible"
@@ -48,7 +66,6 @@ export default function Hero() {
             transformando problemas complexos em soluções simples e eficientes.
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -71,19 +88,43 @@ export default function Hero() {
               Ver Projetos
             </motion.button>
 
-            <motion.a
-              href="/resume.pdf"
-              download
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-6 py-3 flex items-center justify-center rounded-lg border border-sky-500/40 text-sky-400 hover:bg-sky-500/10 transition font-resolve"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Baixar Currículo
-            </motion.a>
+            <div ref={menuRef} className="relative w-full sm:w-auto">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setOpen(!open)}
+                className="w-full px-6 py-3 flex items-center justify-center rounded-lg border border-sky-500/40 text-sky-400 hover:bg-sky-500/10 transition font-resolve"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Baixar Currículo
+              </motion.button>
+
+              {open && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  className="absolute mt-2 w-full rounded-lg bg-[#020617] border border-slate-800 overflow-hidden shadow-lg z-20"
+                >
+                  <a
+                    href="/Curriculo_JoaoLuisSilvaDev.pdf"
+                    download
+                    className="flex items-center gap-2 px-4 py-3 text-sm text-slate-300 hover:bg-sky-500/10 transition"
+                  >
+                    Baixar PDF
+                  </a>
+                  <a
+                    href="/Curriculo_JoaoLuisSilvaDev.docx"
+                    download
+                    className="flex items-center gap-2 px-4 py-3 text-sm text-slate-300 hover:bg-sky-500/10 transition"
+                  >
+                    Baixar DOC
+                  </a>
+                </motion.div>
+              )}
+            </div>
           </motion.div>
 
-          {/* Tech Stack */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -104,7 +145,7 @@ export default function Hero() {
                 >
                   {tech}
                 </motion.span>
-              )
+              ),
             )}
           </motion.div>
         </div>
